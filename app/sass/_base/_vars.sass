@@ -1,23 +1,30 @@
 
 //----------------------fonts---------------------
-$fonts: 'Roboto', sans-serif
+$fonts--text: 'Roboto', sans-serif
+$fonts--title: 'AmaticSC', sans-serif
 //---------------------end-fonts---------------------
 
 //----------------------color---------------------
-$accent: #4cddee
-$text: #353535
-$dark: #1e53a6
-$title: #f43ddb
+$color--accent: #2792b9
+$color--red: #fd7547
+$color--text: #141414
+$color--gray: #9b9b9b
+$color--black: #000000
 
+$bg--footer: #97cce5
+$bg--link: #e1e4e6
+$bg--gray: #eaedf2
+
+$icon--footer: #6f97a9
 //---------------------end-color---------------------
 
 body
 	overflow-x: hidden
 	position: relative
 	min-width: 320px
-	font-family: $fonts
+	font-family: $fonts--text
 	font-size: 14px
-	color: $text
+	color: $color--text
 	line-height: 1.4
 	font-weight: 400
 	min-height: 100vh
@@ -26,7 +33,7 @@ body
 	justify-content: space-between
 
 ::selection
-	background-color: $accent
+	background-color: $color--accent
 	color: #fff
 	
 h1, h2, h3, h4, h5, h6

@@ -1,21 +1,26 @@
 @import "libs"
 @import "base"
 
-img
-	max-width: 100%
-	width: 100%
-
 .container
 	width: 100%
-	max-width: 1200px
+	max-width: 1440px
 	padding: 0 15px
 	margin: 0 auto
+
+	+r(1440)
+		max-width: 1200px
 
 	+r(1200)
 		max-width: 992px
 
 	+r(992)
-		max-width: 768px
+		max-width: 767px
+
+	+r(767)
+		max-width: 576px
+
+	+r(576)
+		max-width: 100%
 
 
 .header
