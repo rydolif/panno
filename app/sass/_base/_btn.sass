@@ -3,15 +3,32 @@
 	display: flex
 	justify-content: center
 	align-items: center
-	height: 45px
-	font-size: 18px
-	color: $color--accent
+	height: 40px
+	font-size: 16px
+	text-transform: uppercase
+	color: $color--white
 	font-weight: 700
 	border-radius: 20px
-	max-width: fit-content
+	width: 100%
+	background-color: #97cce5
+	border: 1px solid #97cce5
 
 	&:hover,
 	&:focus
-		border: 1px solid $color--accent
+		border: 1px solid $color--white
 		background: $color--accent
 		color: #fff
+
+	+r(1200)
+		font-size: 14px
+
+	svg
+		width: 17px
+		height: 15px
+		margin-left: 15px
+
+		+r(1200)
+			margin-left: 5px
+
+	path
+		fill: $color--white !important

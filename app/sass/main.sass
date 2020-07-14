@@ -32,6 +32,7 @@
 .header
 	padding-top: 5px
 	padding-bottom: 10px
+	z-index: 1000
 
 	&__container
 		position: relative
@@ -435,7 +436,187 @@
 				margin-bottom: 20px
 
 
-.arhive
+.archive
+	padding-top: 15px
+	padding-bottom: 40px
+
+	h2
+		margin-bottom: 25px
+
+		+r(480)
+			text-align: center
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+
+		+r(480)
+			justify-content: space-around
+
+	&__item
+		width: 25%
+		padding: 0 15px
+		text-align: center
+		margin-bottom: 35px
+
+		&:hover,
+		&:focus
+			.archive__item
+
+				&_img
+					&::before
+						opacity: 1
+
+					span
+						opacity: 1
+				
+				&_wrap
+					box-shadow: 0 0 10px 0 rgba($color--black, .4)
+
+		+r(1200)
+			margin-bottom: 20px
+
+		+r(992)
+			width: 33%
+
+		+r(767)
+			width: 50%
+		
+		+r(480)
+			max-width: 320px
+			width: 100%
+
+		&_wrap
+			padding-bottom: 25px
+			border-radius: 25px
+			margin-bottom: 30px
+			+transition
+
+			+r(1200)
+				padding-bottom: 15px
+				margin-bottom: 15px
+
+			+r(480)
+				box-shadow: 0 0 10px 0 rgba($color--black, .4)
+
+		&_img
+			position: relative
+			overflow: hidden
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 25px
+			margin-bottom: 20px
+
+			+r(1200)
+				margin-bottom: 10px
+
+			&::before
+				content: ''
+				position: absolute
+				width: 100%
+				height: 100%
+				background-color: rgba(#97cce5, .5)
+				+transition
+				opacity: 0
+
+				+r(480)
+					opacity: 1
+
+		img
+			width: 100%
+			border-radius: 25px
+
+		&_title
+			display: block
+			font-size: 30px
+			margin-bottom: 5px
+			font-family: $fonts--title
+			color: $color--text
+			font-weight: 700
+
+			+r(1200)
+				font-size: 24px
+
+			&:hover,
+			&:focus
+				color: $color--accent
+
+		&_size
+			font-size: 16px
+			font-weight: 700
+			margin-bottom: 4px
+
+			img
+				width: 25px
+				height: 25px
+				border-radius: 0
+				margin-left: 40px
+
+				+r(1200)
+					margin-left: 15px
+
+		&_text
+			color: #9b9b9b
+			line-height: 1.2
+			padding: 0 5px
+
+		&_price
+			font-size: 20px
+			font-weight: 700
+
+		&_zoom
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 45px
+			height: 45px
+			border-radius: 50%
+			background-color: $color--white
+			opacity: 0
+			+transition
+
+			+r(480)
+				opacity: 1
+
+			svg
+				width: 60%
+				height: 60%
+
+	&__pagination
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+		width: 100%
+		font-size: 18px
+		line-height: 1
+		font-weight: 700
+
+		span, a
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 0 5px
+			color: $color--text
+			width: 30px
+			height: 30px
+			border: 3px solid transparent
+			border-radius: 50%
+
+		a
+			&:hover,
+			&:focus
+				color: $color--accent
+
+		span
+			border-color: #97cce5
+
 
 .footer
 	+cover
@@ -478,26 +659,6 @@
 	&__copy
 		+between
 		padding-top: 20px
-	
-	&__logo
-		display: flex
-		justify-content: space-between
-		align-items: center
-
-		+r(992)
-			width: 100%
-			justify-content: center
-			margin-bottom: 25px
-
-		img
-			display: block
-			width: 90px
-			height: auto
-			margin-right: 25px
-
-		p
-			color: $color--text
-			line-height: 1.4
 
 	&__col
 		width: 23%
@@ -510,6 +671,26 @@
 			width: 100%
 			text-align: center
 
+	&__logo
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		+r(992)
+			width: 100%
+			justify-content: center
+			order: 1
+
+		img
+			display: block
+			width: 90px
+			height: auto
+			margin-right: 25px
+
+		p
+			color: $color--text
+			line-height: 1.4
+
 	&__soc
 		display: flex
 		width: 23%
@@ -518,6 +699,7 @@
 			width: 100%
 			flex-wrap: wrap
 			justify-content: center
+			margin-bottom: 25px
 
 		li
 			margin-right: 12px
