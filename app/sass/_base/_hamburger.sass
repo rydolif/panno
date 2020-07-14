@@ -9,6 +9,9 @@
 	background-color: transparent
 	transition: all .3s
 
+	+r(1200)
+		display: block
+
 	&:focus,
 	&:hover
 		outline: none
@@ -26,7 +29,7 @@
 		top: 0
 		width: 35px
 		height: 3px
-		background-color: #fff
+		background-color: $color--black
 		border-radius: 4px
 		transition: all .2s
 		bottom: 0
@@ -37,7 +40,7 @@
 			position: absolute
 			right: 0
 			top: -10px
-			background-color: #fff
+			background-color: $color--black
 			width: 35px
 			height: 3px
 			transition: transform 0s 0.1s
@@ -48,7 +51,7 @@
 			position: absolute
 			right: 0
 			top: -20px
-			background-color: #fff
+			background-color: $color--black
 			width: 35px
 			height: 3px
 			transition: transform 0s 0.1s
