@@ -45,6 +45,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',  			//----jquery
+		'app/libs/swiper/swiper.min.js', 				//----swiper
 		'app/libs/jquery.popupoverlay.js', 				//----модалки
 		'app/js/common.js', // Always at the end
 		])

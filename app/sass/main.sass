@@ -437,7 +437,7 @@
 
 
 .archive
-	padding-top: 15px
+	padding-top: 20px
 	padding-bottom: 40px
 
 	h2
@@ -474,6 +474,9 @@
 				&_wrap
 					box-shadow: 0 0 10px 0 rgba($color--black, .4)
 
+			.btn
+				opacity: 1
+
 		+r(1200)
 			margin-bottom: 20px
 
@@ -487,10 +490,13 @@
 			max-width: 320px
 			width: 100%
 
+		.btn
+			opacity: 0
+
 		&_wrap
 			padding-bottom: 25px
 			border-radius: 25px
-			margin-bottom: 30px
+			margin-bottom: 25px
 			+transition
 
 			+r(1200)
@@ -561,6 +567,7 @@
 			color: #9b9b9b
 			line-height: 1.2
 			padding: 0 5px
+			margin-bottom: 10px
 
 		&_price
 			font-size: 20px
@@ -617,6 +624,188 @@
 		span
 			border-color: #97cce5
 
+.tovar
+	padding-top: 35px
+	padding-bottom: 55px
+
+	&__container
+		+between
+		align-items: flex-start
+
+	&__slider
+		width: 450px
+
+		+r(992)
+			width: 48%
+
+		+r(767)
+			width: 100%
+			max-width: 400px
+			margin: 0 auto 20px
+
+	&__content
+		width: 57%
+
+		+r(1200)
+			width: 51%
+
+		+r(992)
+			width: 50%
+
+		+r(767)
+			width: 100%
+
+		br
+			+r(1200)
+				display: none
+
+		h2
+			text-align: center
+			margin-bottom: 30px
+
+			+r(992)
+				font-size: 24px
+				margin-bottom: 20px
+		
+		ul
+			width: 100%
+			padding: 0 25px
+			margin-bottom: 35px
+
+			+r(1200)
+				padding: 0 15px
+				margin-bottom: 20px
+			
+			+r(480)
+				padding: 0
+
+		li
+			display: flex
+			justify-content: space-between
+			margin-bottom: 5px
+
+			&:last-child
+				margin-bottom: 0
+
+			span
+				color: #9b9b9b
+
+	&__form
+		+between
+		padding: 0 25px
+		margin-bottom: 35px
+
+		+r(1200)
+			padding: 0 15px
+
+		+r(992)
+			margin-bottom: 20px
+
+		+r(480)
+			padding: 0
+
+		&_price
+			font-size: 20px
+			font-weight: 700
+
+		&_wrap
+			+between
+
+			input
+				width: 40px
+				height: 40px
+				font-weight: 700
+				padding: 0
+				text-align: center
+				border-radius: 50%
+				border-color: $color--white
+				box-shadow: 4px 5px 5px 0 rgba($color--black, .2) inset
+
+			button
+				width: 40px
+				height: 40px
+				font-size: 16px
+				font-weight: 700
+				border: 0
+				background-color: transparent
+				border-radius: 50%
+
+				&:hover,
+				&:focus
+					background-color: $bg--gray
+
+	&__description
+		padding: 30px 90px 40px
+		+cover
+		background-image: url(../img/tovar--description.png)
+		text-align: center
+		border-radius: 30px
+		overflow: hidden
+
+		+r(1200)
+			padding: 25px
+
+		+r(992)
+			padding: 15px
+
+		b, strong
+			text-transform: uppercase
+			font-size: 16px
+
+			+r(992)
+				font-size: 14px
+
+		p
+			margin-bottom: 20px
+
+			+r(1200)
+				margin-bottom: 10px
+
+			&:last-child
+				margin-bottom: 0
+		
+		a
+			color: $color--accent
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+	&__img
+		margin-bottom: 25px
+
+		+r(767)
+			margin-bottom: 15px
+
+		.swiper-slide
+			border-radius: 30px
+			overflow: hidden
+
+		img
+			width: 100%
+
+	&__previews
+		img
+			width: 100%
+
+		.swiper-slide
+			border: 3px solid transparent
+			border-radius: 20px
+			overflow: hidden
+			transition: border .6s
+			cursor: pointer
+
+		.swiper-slide-thumb-active
+			border-color: #97cce5
+
+	.btn
+		max-width: 260px
+
+		+r(1200)
+			max-width: 200px
+
+		+r(480)
+			margin: 10px auto 0
 
 .footer
 	+cover

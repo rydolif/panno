@@ -28,5 +28,28 @@ $(function() {
   //       }
   //   });
 
+  //------------------------------cart slider-----------------------------
+  var tovarPreviews = new Swiper('.tovar__previews', {
+    spaceBetween: 15,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      }
+    }
+  });
+
+  //------------------------------tovar slider-----------------------------
+  var cartImg = new Swiper('.tovar__img', {
+    spaceBetween: 30,
+    thumbs: {
+      swiper: tovarPreviews
+    }
+  });
+
 });
 

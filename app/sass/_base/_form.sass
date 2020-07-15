@@ -7,7 +7,6 @@ input, textarea, select
 	box-shadow: none
 	// -webkit-appearance: none
 	font-size: 16px
-	box-shadow: 0 0 6px rgba(42, 63, 125, 0.34)
 	
 	&:focus:required:invalid
 		border-color: red
@@ -25,6 +24,18 @@ input, textarea, select
 		color: #c4c4c4
 		font-size: 12px
 		line-height: 50px
+
+input[type='number']
+	-moz-appearance:textfield
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+
+
+button
+	cursor: pointer
 
 input, select
 	height: 50px
