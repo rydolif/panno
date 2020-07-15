@@ -1,12 +1,14 @@
 form
 
 input, textarea, select
+	+transition
 	width: 100%
 	border: 3px solid transparent
 	outline: none
 	box-shadow: none
 	// -webkit-appearance: none
-	+transition
+	height: 40px
+	border-radius: 20px
 
 	&:focus:required:invalid
 		border-color: red
@@ -45,6 +47,10 @@ input, select
 		line-height: 40px
 
 textarea
+	height: 170px
+	resize: none
+	padding: 10px 25px
+
 	&::placeholder
 		line-height: 1.4
 
