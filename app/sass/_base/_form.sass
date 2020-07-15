@@ -2,12 +2,12 @@ form
 
 input, textarea, select
 	width: 100%
-	border: 1px solid #ebebeb
+	border: 3px solid transparent
 	outline: none
 	box-shadow: none
 	// -webkit-appearance: none
-	font-size: 16px
-	
+	+transition
+
 	&:focus:required:invalid
 		border-color: red
 		outline: none
@@ -22,8 +22,7 @@ input, textarea, select
 
 	&::placeholder
 		color: #c4c4c4
-		font-size: 12px
-		line-height: 50px
+		line-height: 40px
 
 input[type='number']
 	-moz-appearance:textfield
@@ -38,17 +37,19 @@ button
 	cursor: pointer
 
 input, select
-	height: 50px
-	line-height: 50px
-	padding: 0 25px
+	height: 40px
+	line-height: 40px
+	padding: 0 30px
 
 	&::placeholder
-		line-height: 50px
-		font-size: 16px
+		line-height: 40px
 
 textarea
 	&::placeholder
 		line-height: 1.4
+
+label
+	margin-bottom: 0
 
 label.error
 	position: absolute
