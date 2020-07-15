@@ -189,22 +189,38 @@
 	&__info
 		+between
 
-		svg
+
+		&_bg
+			position: relative
+			display: block
 			width: 25px
 			height: 25px
+
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 35px
+				height: 35px
+				background-color: #97cce5
+				border-radius: 50%
+				z-index: -1
+				opacity: 0
+				+transition
 
 		&_profile
 			position: relative
 			margin-right: 20px
 			padding: 10px 0
-			cursor: pointer
 
 			&:hover,
 			&:focus
-				img
-					+transition
-					background-color: #97cce5
-					border-radius: 20px
+				.header__info_bg
+					&::before
+						opacity: 1
 
 				ul
 					display: block
@@ -222,6 +238,8 @@
 
 			svg
 				+transition
+				width: 25px
+				height: 25px
 
 			a
 				display: block
@@ -235,18 +253,19 @@
 
 		&_cart
 			position: relative
-			padding: 10px 0
 			cursor: pointer
+			width: 25px
+			height: 25px
 
 			&:hover,
 			&:focus
-				svg
-					background-color: #97cce5
-					border-radius: 5px
+				.header__info_bg
+					&::before
+						opacity: 1
 
 			svg
 				width: 25px
-				height: 25px
+				height: 23px
 				+transition
 
 			span
@@ -1134,6 +1153,7 @@
 		&_btn
 			.btn
 				max-width: 100%
+
 
 .footer
 	+cover
