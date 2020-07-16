@@ -1423,6 +1423,117 @@
 				margin-bottom: 0
 
 
+.form
+	+cover
+	background-image: url(../img/hero--bg.png)
+	height: 80vh
+	min-height: 600px
+	margin-bottom: -20px
+	padding: 5% 0
+
+	&__container
+		height: 100%
+		display: flex
+		flex-direction: colomn
+		justify-content: center
+		align-items: center
+
+	&__wrap
+		border-radius: 20px
+		background-color: #edf0f3
+		padding: 25px 85px 50px
+		max-width: 620px
+		width: 100%
+
+		+r(576)
+			padding: 15px 40px
+
+		+r(480)
+			padding: 15px 20px
+
+		&_line
+			width: 100%
+			margin-bottom: 15px
+
+			input
+				&:hover,
+				&:focus
+					border-color: #97cce5
+					color: $color--white
+
+		&_checkbox
+			margin-top: 35px
+			margin-bottom: 45px
+
+			+r(480)
+				margin: 20px 0
+
+		&_remember
+			display: flex
+			justify-content: space-between
+			margin-top: 35px
+
+			a
+				color: $color--text
+				text-decoration: underline
+
+				&:hover,
+				&:focus
+					color: $color--accent
+					text-decoration: underline
+
+		br
+				display: none
+
+		label
+			position: relative
+			padding-left: 50px
+			cursor: pointer
+			margin-bottom: 0
+			margin-right: 0
+			font-size: 12px
+
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				left: 5px
+				top: 50%
+				transform: translate(0, -50%)
+
+			&::before
+				width: 22px
+				height: 22px
+				border-radius: 50%
+				border: 5px solid #97cce5
+				background-color: #ffffff
+
+			&::after
+				width: 12px
+				height: 12px
+				border-radius: 50%
+				border: 1px solid $color--accent
+				background: $color--accent
+				left: 10px
+				transition: all .6s
+
+		input[type="checkbox"]
+			display: none
+
+		input[type="checkbox"]:checked + label::after
+			transform: translate(0, -50%) scale(1)
+
+		input[type="checkbox"] + label::after
+			transform: translate(0, -50%) scale(0)
+
+	h2
+		text-align: center
+		margin-bottom: 25px
+
+
+
+
+
 .footer
 	+cover
 	background-image: url(../img/footer--bg.png)
