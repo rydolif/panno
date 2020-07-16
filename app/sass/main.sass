@@ -1377,6 +1377,52 @@
 			max-width: 330px
 
 
+.delivery
+
+	+r(767)
+		text-align: center
+
+	h2
+		display: flex
+		align-items: center
+
+		+r(767)
+			justify-content: center
+
+		svg
+			margin-left: 15px
+	
+	&__info
+		width: 45%
+
+		+r(767)
+			width: 100%
+
+		a
+			color: $color--accent
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+		.btn
+			color: $color--white
+			max-width: 330px
+
+			+r(767)
+				margin: 0 auto
+
+			&:hover,
+			&:focus
+				text-decoration: none
+
+		p
+			margin-bottom: 25px
+
+			&:last-child
+				margin-bottom: 0
+
+
 .footer
 	+cover
 	background-image: url(../img/footer--bg.png)
