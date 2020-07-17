@@ -317,10 +317,12 @@
 
 .hero
 	+cover
+	position: relative
 	background-image: url(../img/hero--bg.png)
 	padding-top: 170px
 	padding-bottom: 535px
 	margin-bottom: -138px
+	z-index: 1
 
 	+r(1440)
 		padding-bottom: 450px
@@ -341,6 +343,23 @@
 	+r(480)
 		padding-top: 80px
 		padding-bottom: 150px
+
+	&__decor
+		position: absolute
+		animation-iteration-count: infinite
+		animation-direction: alternate
+		z-index: -1
+
+		&--1
+			top: 10%
+			animation-name: decor1
+			animation-duration: 25s
+
+		&--2
+			top: 25%
+			animation-name: decor2
+			animation-duration: 30s
+
 
 	h1
 		font-size: 48px
@@ -440,6 +459,9 @@
 			
 			+r(576)
 				width: 100%
+
+			img
+				height: 100px
 
 	&__man
 		position: absolute
@@ -1529,9 +1551,6 @@
 	h2
 		text-align: center
 		margin-bottom: 25px
-
-
-
 
 
 .footer
