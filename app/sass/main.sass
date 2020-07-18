@@ -379,6 +379,7 @@
 
 
 .info
+	z-index: 1
 
 	&__wrap
 		position: relative
@@ -1555,8 +1556,25 @@
 
 .footer
 	+cover
+	position: relative
 	background-image: url(../img/footer--bg.png)
 	padding: 35px 0 30px
+	z-index: 1
+
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		top: 20%
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $bg--footer
+		z-index: -1
+
+	+r(992)
+		background-size: 280%
+		background-position: 0 0
 
 	&__container
 		+between
