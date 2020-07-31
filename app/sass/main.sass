@@ -1675,4 +1675,145 @@
 			+transition
 
 
+.panno
+	padding-top: 35px
+	padding-bottom: 55px
+
+	&__container
+		position: relative
+
+	&__navigation
+		position: absolute
+		top: 20%
+		right: 25px
+		z-index: 100
+		display: flex
+		flex-direction: column
+
+		&_info
+			position: relative
+			margin-bottom: 90px
+			padding-left: 15px
+
+			&:hover,
+			&:focus
+				p
+					display: block
+	
+			p
+				position: absolute
+				right: 55px
+				top: 0
+				width: 185px
+				background-color: #fff
+				border-radius: 20px
+				box-shadow: 0 0 15px 0 rgba($color--text, .5)
+				padding: 15px 30px
+				font-size: 14px
+				text-align: center
+				line-height: 1.2
+				display: none
+
+		&_wrap
+			position: relative
+			padding-left: 15px
+
+			&:hover,
+			&:focus
+				.panno__navigation_settings
+					display: block
+
+		&_settings
+			position: absolute
+			right: 55px
+			top: 0
+			width: 185px
+			background-color: #fff
+			border-radius: 20px
+			box-shadow: 0 0 15px 0 rgba($color--text, .5)
+			padding: 15px 30px
+			font-size: 14px
+			text-align: center
+			line-height: 1.2
+			display: none
+
+			p
+				display: flex
+				justify-content: center
+
+		&_button
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 40px
+			height: 40px
+			line-height: 1
+			background-color: $color--red
+			border-radius: 50%
+			color: #ffffff
+			font-size: 24px
+			box-shadow: 0 0 15px 0 rgba($color--text, .5)
+
+			&:hover,
+			&:focus
+				color: #ffffff
+
+			svg, path
+				fill: #ffffff !important
+
+			img, svg
+				width: 24px
+				height: 24px
+
+	&__wrap
+		position: relative
+		overflow: hidden
+		height: 1100px
+
+		&::-webkit-scrollbar
+			width: 0px
+
+	&__pluse,
+	&__minus
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 28px
+		height: 28px
+	
+	&__pluse
+		margin-right: 15px
+
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		width: 100%
+		height: auto
+		min-width: 100%
+		max-width: 300%
+		+transition
+
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			// height: 100%
+
+
+		&_pluse
+			width: 200%
+
+
+
+.dragscroll
+	cursor: grab
+
+
+
+
 @import "page"
