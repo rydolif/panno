@@ -1,5 +1,19 @@
 $(function() {
 
+
+//---------------------------tabs-audio-filter-----------------------
+  $('.tabs__wrap').hide();
+  $('.tabs__wrap:first').show();
+  $('.tabs ul a:first').addClass('active');
+  $('.tabs ul a').click(function(event){
+    event.preventDefault();
+    $('.tabs ul a').removeClass('active');
+    $(this).addClass('active');
+    $('.tabs__wrap').hide();
+    var selectTab = $(this).attr('href');
+    $(selectTab).fadeIn();
+  });
+
 //-------------------------------попандер---------------------------------------
   $('.modal').popup({transition: 'all 0.3s'});
 
@@ -43,6 +57,10 @@ $(function() {
         var newWidth = value.replace('px','')*1.5;
         return newWidth;
     });
+    $('.panno__img').css('height', function(index, value){
+        var newheight = value.replace('px','')*1.5;
+        return newheight;
+    });
   });
 
   $('.panno__minus').click(function(event){
@@ -50,7 +68,11 @@ $(function() {
     $('.panno__img').css('width', function(index, value){
       var newWidth = value.replace('px','')/1.5;
       return newWidth;
-  });
+    });
+    $('.panno__img').css('height', function(index, value){
+      var newheight = value.replace('px','')/1.5;
+      return newheight;
+    });
   });
 
 // ------------------------------panno-scroll-----------------------------

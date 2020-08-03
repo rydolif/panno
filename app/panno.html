@@ -127,7 +127,7 @@
 		</div>
 	</header>
 
-	<section class="panno">
+	<section class="panno tabs">
 		<div class="panno__container container">
 
 			<div class="panno__navigation">
@@ -169,24 +169,11 @@
 							</a>
 						</p>
 						<p class="panno__navigation_title"></p>
-						<form action="" class="panno__navigation_form">
-							<div class="panno__navigation_line">
-								<input type="radio" name="navigation-transfer" id="transfer">
-								<label for="transfer">Произносить с переводом</label>
-							</div>
-							<div class="panno__navigation_line">
-								<input type="radio" name="navigation-transfer" id="no-transfer">
-								<label for="no-transfer">Произносить без перевода</label>
-							</div>
-							<div class="panno__navigation_line">
-								<input type="radio" name="navigation-pronounce" id="pronounce-full">
-								<label for="pronounce-full">Произносить предложение целиком</label>
-							</div>
-							<div class="panno__navigation_line">
-								<input type="radio" name="navigation-pronounce" id="pronounce">
-								<label for="pronounce">Произносить предложение</label>
-							</div>
-						</form>
+						<ul class="panno__navigation_form">
+							<li><a href="#one">Произносить с переводом</a></li>
+							<li><a href="#two">Произносить без перевода</a></li>
+							<li><a href="#three">Произносить предложение целиком</a></li>
+						</ul>
 					</div>
 				</div>
 
@@ -195,7 +182,72 @@
 			<div class="panno__wrap dragscroll">
 				<div class="panno__img">
 					<img src="img/panno.jpg" class="">
+
+					<div id="one" class="tabs__wrap panno__audio-wrap">
+						<div class="panno__audio panno__audio--1">
+							<span>Sky</span>
+							<audio controls>
+								<source src="audio/test.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--right panno__audio--2">
+							<span>Sun</span>
+							<audio controls>
+								<source src="audio/test.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--bottom panno__audio--3">
+							<span>Window</span>
+							<audio controls>
+								<source src="audio/test.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+					</div>
+
+					<div id="two" class="tabs__wrap panno__audio-wrap">
+						<div class="panno__audio panno__audio--1">
+							<span>Небо</span>
+							<audio controls>
+								<source src="audio/test-ru.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--right panno__audio--2">
+							<span>Трава</span>
+							<audio controls>
+								<source src="audio/test-ru.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--bottom panno__audio--3">
+							<span>Шкаф</span>
+							<audio controls>
+								<source src="audio/test-ru.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+					</div>
+
+					<div id="three" class="tabs__wrap panno__audio-wrap">
+						<div class="panno__audio panno__audio--1">
+							<span>Sky</span>
+							<audio controls>
+								<source src="audio/test-full.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--right panno__audio--2">
+							<span>Sun</span>
+							<audio controls>
+								<source src="audio/test-full.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="panno__audio panno__audio--bottom panno__audio--3">
+							<span>Window</span>
+							<audio controls>
+								<source src="audio/test-full.MP3" type="audio/mpeg">
+							</audio>
+						</div>
+					</div>
+
 				</div>
+
 			</div>
 
 		</div>
@@ -311,7 +363,6 @@
 	</footer>
 
 	<script src="js/scripts.min.js"></script>
-	
 
 </body>
 </html>
