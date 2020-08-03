@@ -169,21 +169,21 @@
 							</a>
 						</p>
 						<p class="panno__navigation_title"></p>
-						<form name="imageControl" class="panno__navigation_form">
+						<form action="" class="panno__navigation_form">
 							<div class="panno__navigation_line">
-								<input type="radio" name="navigation" id="transfer" value="audio/test.mp3" checked>
+								<input type="radio" name="navigation-transfer" id="transfer">
 								<label for="transfer">Произносить с переводом</label>
 							</div>
 							<div class="panno__navigation_line">
-								<input type="radio" name="navigation" id="no-transfer" value="audio/test-ru.mp3">
+								<input type="radio" name="navigation-transfer" id="no-transfer">
 								<label for="no-transfer">Произносить без перевода</label>
 							</div>
 							<div class="panno__navigation_line">
-								<input type="radio" name="navigation" id="pronounce-full" value="audio/test.mp3">
+								<input type="radio" name="navigation-pronounce" id="pronounce-full">
 								<label for="pronounce-full">Произносить предложение целиком</label>
 							</div>
 							<div class="panno__navigation_line">
-								<input type="radio" name="navigation" id="pronounce" value="audio/test-ru.mp3">
+								<input type="radio" name="navigation-pronounce" id="pronounce">
 								<label for="pronounce">Произносить предложение</label>
 							</div>
 						</form>
@@ -194,35 +194,9 @@
 
 			<div class="panno__wrap dragscroll">
 				<div class="panno__img">
-					<img src="img/panno.jpg" class="" usemap="#map">
-					<map name="map">
-						<area id="play" shape="rect" coords="34, 44, 270, 350" title="Play" onclick="play()">
-					</map>
+					<img src="img/panno.jpg" class="">
 				</div>
 			</div>
-
-			<script>
-				//-------------------radio-----------------------
-					var cupHolder = document.getElementById("play"),
-							radioLen = document.imageControl.imgChange.length;
-			
-					for (var i = 0; i < radioLen; i++) {
-							document.imageControl.imgChange[i].addEventListener('click',
-									function() {
-											cupHolder.src = this.value;
-									}
-							);
-					}
-
-				//-------------------audio-----------------------
-					var go = document.getElementById('play'),
-					audio = null;
-
-					function play() {
-						audio = new Audio('audio/test-ru.mp3');
-						audio.play();
-					}
-			</script>
 
 		</div>
 	</section>
