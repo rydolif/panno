@@ -1769,6 +1769,7 @@
 			font-size: 14px
 			font-weight: 800
 			text-transform: uppercase
+			margin-bottom: 15px
 
 		&_zoom
 			margin-bottom: 15px
@@ -1811,7 +1812,7 @@
 	&__wrap
 		position: relative
 		overflow: hidden
-		height: 1100px
+		height: 100vh
 
 		&::-webkit-scrollbar
 			width: 0px
@@ -1832,37 +1833,44 @@
 		margin-right: 15px
 
 	&__img
-		position: absolute
+		position: relative
 		top: 0
 		left: 0
-		bottom: 0
-		right: 0
 		width: 100%
-		min-width: 100%
-		max-width: 500%
 		min-height: 100%
-		max-height: 500%
-		+transition
+		height: auto
+		transition: 6s
 
 		img
 			width: 100%
+			height: auto
+			transition: 3s
 
-		&_pluse
-			width: 200%
+		&--two
+			width: 140%
+		
+		&--three
+			width: 180%
+		
+		&--four
+			width: 240%
 
 	&__audio
 		position: absolute
 		display: block
-		width: 35px
 
 		span
-			width: auto
+			display: block
+			width: 3px
+			height: 3px
+			border-radius: 50%
+			background-color: #000000
 			white-space: nowrap
-			color: $color--red
 
 		&:hover,
 		&:focus
 			z-index: 100
+
 			audio
 				display: block
 
@@ -1885,12 +1893,22 @@
 				bottom: 100%
 
 		&--1
-			top: 5%
-			left: 20%
+			top: 10%
+			left: 27%
+
+			span
+				width: 20px
+				height: 10px
+				// background-color: transparent
 
 		&--2
-			top: 8.5%
-			left: 85%
+			top: 19.5%
+			left: 86.5%
+
+			span
+				width: 20px
+				height: 10px
+				// background-color: transparent
 
 		&--3
 			top: 410px
@@ -1904,6 +1922,7 @@
 		bottom: 0
 		width: 100%
 		height: 100%
+		transition: 3s
 
 
 .dragscroll
