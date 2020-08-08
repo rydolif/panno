@@ -1,5 +1,137 @@
 $(function() {
 
+// ------------------------------panno-button-----------------------------
+  $('.panno__pluse--one').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--one").css("display", "none");
+    $(".panno__pluse--two").css("display", "block");
+
+    $(".panno__minus--one").css("display", "none");
+    $(".panno__minus--two").css("display", "block");
+
+    $('.panno__img').addClass('panno__img--two');
+
+    $('.panno__img--two span').css('width', function(index, value){
+      var newWidth = value.replace('px','')*1.40;
+      return newWidth;
+    });
+    $('.panno__img--two span').css('height', function(index, value){
+      var newheight = value.replace('px','')*1.35;
+      return newheight;
+    });
+  });
+
+  $('.panno__pluse--two').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--two").css("display", "none");
+    $(".panno__pluse--three").css("display", "block");
+
+    $(".panno__minus--two").css("display", "none");
+    $(".panno__minus--three").css("display", "block");
+
+    $('.panno__img').addClass('panno__img--three');
+    $('.panno__img').removeClass('panno__img--two');
+
+    $('.panno__img--three span').css('width', function(index, value){
+      var newWidth = value.replace('px','')*1.35;
+      return newWidth;
+    });
+    $('.panno__img--three span').css('height', function(index, value){
+      var newheight = value.replace('px','')*1.35;
+      return newheight;
+    });
+  });
+
+  $('.panno__pluse--three').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--three").css("display", "none");
+    $(".panno__pluse--four").css("display", "block");
+
+    $(".panno__minus--three").css("display", "none");
+    $(".panno__minus--four").css("display", "block");
+
+    $('.panno__img').addClass('panno__img--four');
+    $('.panno__img').removeClass('panno__img--three');
+
+    $('.panno__img--four span').css('width', function(index, value){
+      var newWidth = value.replace('px','')*1.35;
+      return newWidth;
+    });
+    $('.panno__img--four span').css('height', function(index, value){
+      var newheight = value.replace('px','')*1.35;
+      return newheight;
+    });
+  });
+
+
+//------------------------------panno-button-----------------------------
+  $('.panno__minus--two').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--one").css("display", "block");
+    $(".panno__pluse--two").css("display", "none");
+
+    $(".panno__minus--one").css("display", "block");
+    $(".panno__minus--two").css("display", "none");
+
+    $('.panno__img').removeClass('panno__img--two');
+
+    $('.panno__audio span').css('width', function(index, value){
+      var newWidth = value.replace('px','')/1.40;
+      return newWidth;
+    });
+    $('.panno__audio span').css('height', function(index, value){
+      var newheight = value.replace('px','')/1.35;
+      return newheight;
+    });
+  });
+
+  $('.panno__minus--three').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--two").css("display", "block");
+    $(".panno__pluse--three").css("display", "none");
+
+    $(".panno__minus--two").css("display", "block");
+    $(".panno__minus--three").css("display", "none");
+
+    $('.panno__img').addClass('panno__img--two');
+    $('.panno__img').removeClass('panno__img--three');
+
+    $('.panno__audio span').css('width', function(index, value){
+      var newWidth = value.replace('px','')/1.35;
+      return newWidth;
+    });
+    $('.panno__audio span').css('height', function(index, value){
+      var newheight = value.replace('px','')/1.35;
+      return newheight;
+    });
+  });
+
+  $('.panno__minus--four').click(function(event){
+    event.preventDefault();
+
+    $(".panno__pluse--three").css("display", "block");
+    $(".panno__pluse--four").css("display", "none");
+
+    $(".panno__minus--three").css("display", "block");
+    $(".panno__minus--four").css("display", "none");
+
+    $('.panno__img').addClass('panno__img--three');
+    $('.panno__img').removeClass('panno__img--four');
+
+    $('.panno__audio span').css('width', function(index, value){
+      var newWidth = value.replace('px','')/1.35;
+      return newWidth;
+    });
+    $('.panno__audio span').css('height', function(index, value){
+      var newheight = value.replace('px','')/1.35;
+      return newheight;
+    });
+  });
 
 //---------------------------tabs-audio-filter-----------------------
   $('.tabs__wrap').hide();
@@ -48,77 +180,48 @@ $(function() {
 
 });
 
-// // ------------------------------panno-button-----------------------------
-//   $('.panno__pluse').click(function(event){
-//     event.preventDefault();
-//     $('.panno__img--three').addClass('panno__img--four');
-//     $('.panno__img--two').addClass('panno__img--three');
-//     $('.panno__img').addClass('panno__img--two');
 
-//     $('.panno__audio span').css('width', function(index, value){
-//         var newWidth = value.replace('px','')*1.35;
-//         return newWidth;
-//     });
-//       $('.panno__audio span').css('height', function(index, value){
-//           var newheight = value.replace('px','')*1.35;
-//           return newheight;
-//     });
-//   });
-
-// // ------------------------------panno-button-----------------------------
-//   $('.panno__minus').click(function(event){
-//     event.preventDefault();
-
-//     if($(".panno__img").hasClass("panno__img--four")) {
-//       $('.panno__img--four').removeClass('panno__img--four');
-//       $('.panno__img--two').removeClass('panno__img--three');
-//       $('.panno__img').removeClass('panno__img--two');
-//     }
-  
-    
-    
-//   });
 
 // ------------------------------panno-button-----------------------------
-  $('.panno__pluse').click(function(event){
-    event.preventDefault();
-    $('.panno__img').css('width', function(index, value){
-        var newWidth = value.replace('px','')*1.35;
-        return newWidth;
-    });
-    $('.panno__img').css('height', function(index, value){
-        var newheight = value.replace('px','')*1.35;
-        return newheight;
-    });
-    $('.panno__audio span').css('width', function(index, value){
-      var newWidth = value.replace('px','')*1.35;
-      return newWidth;
-  });
-    $('.panno__audio span').css('height', function(index, value){
-        var newheight = value.replace('px','')*1.35;
-        return newheight;
-    });
-  });
+  // $('.panno__pluse').click(function(event){
+  //   event.preventDefault();
+  //   $('.panno__img').css('width', function(index, value){
+  //       var newWidth = value.replace('px','')*1.35;
+  //       return newWidth;
+  //   });
+  //   $('.panno__img').css('height', function(index, value){
+  //       var newheight = value.replace('px','')*1.35;
+  //       return newheight;
+  //   });
+  //   $('.panno__audio span').css('width', function(index, value){
+  //     var newWidth = value.replace('px','')*1.35;
+  //     return newWidth;
+  // });
+  //   $('.panno__audio span').css('height', function(index, value){
+  //       var newheight = value.replace('px','')*1.35;
+  //       return newheight;
+  //   });
+  // });
 
-  $('.panno__minus').click(function(event){
-    event.preventDefault();
-    $('.panno__img').css('width', function(index, value){
-      var newWidth = value.replace('px','')/1.35;
-      return newWidth;
-    });
-    $('.panno__img').css('height', function(index, value){
-      var newheight = value.replace('px','')/1.35;
-      return newheight;
-    });
-    $('.panno__audio span').css('width', function(index, value){
-      var newWidth = value.replace('px','')/1.5;
-      return newWidth;
-    });
-    $('.panno__audio span').css('height', function(index, value){
-      var newheight = value.replace('px','')/1.5;
-      return newheight;
-    });
-  });
+  // $('.panno__minus').click(function(event){
+  //   event.preventDefault();
+  //   $('.panno__img').css('width', function(index, value){
+  //     var newWidth = value.replace('px','')/1.35;
+  //     return newWidth;
+  //   });
+  //   $('.panno__img').css('height', function(index, value){
+  //     var newheight = value.replace('px','')/1.35;
+  //     return newheight;
+  //   });
+  //   $('.panno__audio span').css('width', function(index, value){
+  //     var newWidth = value.replace('px','')/1.5;
+  //     return newWidth;
+  //   });
+  //   $('.panno__audio span').css('height', function(index, value){
+  //     var newheight = value.replace('px','')/1.5;
+  //     return newheight;
+  //   });
+  // });
 
 // ------------------------------panno-scroll-----------------------------
   (function (root, factory) {
