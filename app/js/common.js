@@ -180,49 +180,6 @@ $(function() {
 
 });
 
-
-
-// ------------------------------panno-button-----------------------------
-  // $('.panno__pluse').click(function(event){
-  //   event.preventDefault();
-  //   $('.panno__img').css('width', function(index, value){
-  //       var newWidth = value.replace('px','')*1.35;
-  //       return newWidth;
-  //   });
-  //   $('.panno__img').css('height', function(index, value){
-  //       var newheight = value.replace('px','')*1.35;
-  //       return newheight;
-  //   });
-  //   $('.panno__audio span').css('width', function(index, value){
-  //     var newWidth = value.replace('px','')*1.35;
-  //     return newWidth;
-  // });
-  //   $('.panno__audio span').css('height', function(index, value){
-  //       var newheight = value.replace('px','')*1.35;
-  //       return newheight;
-  //   });
-  // });
-
-  // $('.panno__minus').click(function(event){
-  //   event.preventDefault();
-  //   $('.panno__img').css('width', function(index, value){
-  //     var newWidth = value.replace('px','')/1.35;
-  //     return newWidth;
-  //   });
-  //   $('.panno__img').css('height', function(index, value){
-  //     var newheight = value.replace('px','')/1.35;
-  //     return newheight;
-  //   });
-  //   $('.panno__audio span').css('width', function(index, value){
-  //     var newWidth = value.replace('px','')/1.5;
-  //     return newWidth;
-  //   });
-  //   $('.panno__audio span').css('height', function(index, value){
-  //     var newheight = value.replace('px','')/1.5;
-  //     return newheight;
-  //   });
-  // });
-
 // ------------------------------panno-scroll-----------------------------
   (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
