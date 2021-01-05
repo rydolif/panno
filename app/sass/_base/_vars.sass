@@ -40,6 +40,20 @@ body
 	background-color: $color--accent
 	color: #fff
 	
+::-webkit-scrollbar
+	width: 8px
+	height: 8px
+	background-color:  rgab($color--gray, 1)
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb
+	background-color: $bg--gray
+	box-shadow: inset 1px 1px 10px $color--gray
+
+::-webkit-scrollbar-thumb:hover
+	background-color: $bg--gray
+
+
 h1, h2, h3, h4, h5, h6
 	font-weight: 700
 	line-height: 1.2
@@ -86,4 +100,3 @@ button
 
 path, svg
 	transition: all .6s
-

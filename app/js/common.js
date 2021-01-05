@@ -1,5 +1,21 @@
 $(function() {
 
+//-------------------------------активна ссилка на якій знаходишся для меню---------------------------------------
+  $('.profile__nav a').each(function () {
+    var location = window.location.href;
+    var link = this.href; 
+    if(location == link) {
+        $(this).addClass('active');
+    }
+  });
+
+  // ------------------------------form-phone-----------------------------
+  // $('input[type="tel"]').mask('+0 (000) 000-00-00');
+
+  // jQuery.validator.addMethod("phoneno", function(phone_number, element) {
+  //   return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
+  // }, "Введите Ваш телефон");
+
 // ------------------------------panno-button-----------------------------
   $('.panno__pluse--one').click(function(event){
     event.preventDefault();
@@ -264,4 +280,9 @@ $(function() {
     exports.reset = reset;
   }));
 
+//------------------------------preloader-----------------------------
+  $(window).on('load', function(){
+    $('.preloader').delay(1000).fadeOut('slow');
+  });
+  
 

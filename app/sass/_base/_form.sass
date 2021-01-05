@@ -57,7 +57,7 @@ textarea
 label
 	margin-bottom: 0
 
-label.error
+.wpcf7-not-valid-tip
 	position: absolute
 	bottom: -25px
 	right: 25px
@@ -75,9 +75,19 @@ label.error
 		content: ''
 		position: absolute
 		left: 50%
-		top: -8px
-		margin-left: -2px
+		top: -4px
+		transform: translate(-50%, -50%)
 		border-bottom: 4px solid red
 		border-left: 4px solid transparent
 		border-right: 4px solid transparent
 		border-top: 4px solid transparent
+
+
+.wpcf7-response-output
+	position: absolute
+	top: 100%
+	right: 0
+	left: 0
+	background-color: #ffffff
+	border-color: $color--red
+	margin: 0 auto !important

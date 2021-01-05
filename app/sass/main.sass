@@ -1,6 +1,7 @@
 @import "libs"
 @import "base"
 
+
 .container
 	width: 100%
 	max-width: 1440px
@@ -59,9 +60,10 @@
 	&__logo
 		display: flex
 		align-items: center
+		width: 90px
 
 		img
-			width: 90px
+			width: 100%
 			height: auto
 			margin-right: 15px
 
@@ -84,6 +86,7 @@
 			display: flex
 			color: $color--text
 			padding: 5px 7px
+			white-space: nowrap
 
 			&:hover,
 			&:focus
@@ -194,6 +197,11 @@
 			display: block
 			width: 25px
 			height: 25px
+			color: #ffffff
+
+			&:hover,
+			&:focus
+				color: #ffffff
 
 			&::before
 				content: ''
@@ -224,6 +232,9 @@
 				ul
 					display: block
 
+			a
+				white-space: nowrap
+
 			ul
 				position: absolute
 				top: 100%
@@ -234,6 +245,7 @@
 				box-shadow: 0 0 5px 0 rgba($color--black, .5)
 				border-radius: 20px
 				display: none
+				width: 200px
 
 			svg
 				+transition
@@ -256,8 +268,14 @@
 			width: 25px
 			height: 25px
 
+			.widget_shopping_cart
+				display: none
+
 			&:hover,
 			&:focus
+				.widget_shopping_cart
+					display: block
+
 				.header__info_bg
 					&::before
 						opacity: 1
@@ -267,7 +285,7 @@
 				height: 23px
 				+transition
 
-			span
+			.price
 				display: flex
 				justify-content: center
 				align-items: center
@@ -549,6 +567,17 @@
 		.btn
 			opacity: 0
 
+			+r(992)
+				opacity: 1
+
+			img
+				margin-top: -3px
+				width: 17px
+				height: 15px
+				border-radius: 0
+
+			
+
 		&_wrap
 			padding-bottom: 25px
 			border-radius: 25px
@@ -661,11 +690,20 @@
 		line-height: 1
 		font-weight: 700
 
+		ul
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-wrap: wrap
+
+		li
+			margin: 0 5px
+
+
 		span, a
 			display: flex
 			justify-content: center
 			align-items: center
-			margin: 0 5px
 			color: $color--text
 			width: 30px
 			height: 30px
@@ -757,16 +795,53 @@
 
 		+r(992)
 			margin-bottom: 20px
+			flex-wrap: wrap
 
 		+r(480)
 			padding: 0
 
+		.added_to_cart
+			position: absolute
+			top: 15px
+			right: 0
+			color: $color--red
+
+		.cart
+			position: relative
+			display: flex
+			justify-content: space-between
+			width: 71%
+
+			+r(992)
+				width: 100%
+				padding: 10px 0
+
+			+r(480)
+				flex-wrap: wrap
+
+		.button
+			@extend .btn
+
 		&_price
+			flex-shrink: 1
+			padding-top: 35px
+			padding-bottom: 55px
 			font-size: 20px
 			font-weight: 700
 
+			+r(992)
+				padding: 0
+
+			+r(480)
+				text-align: center
+				width: 100%
+
 		&_wrap
 			+between
+
+			+r(480)
+				width: 100%
+				justify-content: center
 
 			input
 				width: 40px
@@ -830,6 +905,8 @@
 
 	&__img
 		margin-bottom: 25px
+		border-radius: 20px
+		overflow: hidden
 
 		+r(767)
 			margin-bottom: 15px
@@ -840,10 +917,13 @@
 
 		img
 			width: 100%
+			height: auto
+			border-radius: 20px
 
 	&__previews
 		img
 			width: 100%
+			height: auto
 
 		.swiper-slide
 			border: 3px solid transparent
@@ -869,10 +949,44 @@
 	padding-top: 35px
 	padding-bottom: 55px
 
+	&__logout
+		width: 100%
+
+	.woocommerce-table
+		margin: 0 auto
+
+	&__section
+		text-align: center
+		margin-bottom: 20px
+
+		&:last-child
+			margin-bottom: 0
+
+		mark
+			background-color: $color--accent
+			padding: 0 5px
+			color: #ffffff
+
+		a
+			color: $color--accent
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+	.woocommerce-notices-wrapper
+		width: 100%
+
 	&__container
 		display: flex
 		flex-wrap: wrap
 		align-items: flex-start
+
+	.woocommerce
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		width: 100%
 
 	&__nav
 		width: 330px
@@ -952,12 +1066,25 @@
 			&:last-child
 				margin-bottom: 0
 
-			input
+			.form-row
+				+between
+				width: 100%
+
+			.woocommerce-input-wrapper
 				max-width: 71%
+				width: 100%
+
+			#billing_address_2_field
+				margin-left: 29%
+
+				span
+					max-width: 100%
+
+			input
+				width: 100%
 
 				+r(767)
 					padding: 0 10px
-					max-width: 60%
 
 				+r(420)
 					max-width: 100%
@@ -969,6 +1096,7 @@
 			label
 				color: #b4b6ba
 				font-size: 12px
+				max-width: 25%
 
 				+r(420)
 					margin-bottom: 5px
@@ -1081,6 +1209,16 @@
 				color: $color--red
 				text-decoration: underline
 
+	.woocommerce-notices-wrapper
+		@extend .profile__wrap
+		background-color: transparent
+		padding: 0
+		order: 1
+
+	.woocommerce-message
+		@extend .profile__wrap
+		width: 100%
+
 
 .contacts
 	padding-top: 35px
@@ -1152,6 +1290,7 @@
 					margin-right: 10px
 
 	&__form
+		position: relative
 		width: 41%
 
 		+r(1200)
@@ -1181,6 +1320,9 @@
 	padding-top: 35px
 	padding-bottom: 55px
 
+	.wbu-qty-button
+		display: none !important
+
 	h2
 		margin-bottom: 30px
 
@@ -1201,26 +1343,27 @@
 			margin-bottom: 15px
 
 	&__thumbnail
-		width: 130px
-		height: 130px
-		padding-right: 40px
+		width: 130px !important
+		height: 130px !important
+		padding-right: 40px !important
 
 		+r(1200)
-			padding-right: 20px
-			width: 100px
-			height: 100px
+			padding-right: 20px !important
+			width: 100px !important
+			height: 100px !important
 
 		+r(767)
-			width: 50px
-			height: 50px
-			padding-right: 15px
+			width: 50px !important
+			height: 50px !important
+			padding-right: 0 !important
+			margin-left: 15px !important
 
 		+r(576)
-			position: absolute
-			left: 0
-			top: 30%
-			transform: translate(0, -50%)
-			padding: 15px
+			position: absolute !important
+			left: 0 !important
+			top: 50% !important
+			transform: translate(0, -50%) !important
+			margin-right: 0 !important
 
 		a
 			display: block
@@ -1243,6 +1386,7 @@
 			height: 100%
 
 	&__name
+		width: 60%
 		border-top-left-radius: 20px
 		border-bottom-left-radius: 20px
 		background-color: $bg--gray
@@ -1252,6 +1396,7 @@
 			padding: 10px 15px
 		
 		+r(576)
+			width: 100%
 			border-bottom-left-radius: 0
 			border-top-right-radius: 20px
 			text-align: center
@@ -1396,7 +1541,8 @@
 			padding-right: 0
 			justify-content: center
 
-		.btn
+		a
+			@extend .btn
 			max-width: 330px
 
 
@@ -1454,10 +1600,27 @@
 	margin-bottom: -20px
 	padding: 5% 0
 
+	.woocommerce
+		width: 100%
+
+	&__error
+		display: block
+		margin: 0 auto 15px
+		max-width: 620px
+		width: 100%
+
+		li
+			background-color: #edf0f3
+			padding: 5px
+			margin-bottom: 5px
+			border-radius: 15px
+			text-align: center
+			color: $color--red
+
 	&__container
 		height: 100%
 		display: flex
-		flex-direction: colomn
+		flex-direction: column
 		justify-content: center
 		align-items: center
 
@@ -1474,15 +1637,33 @@
 		+r(480)
 			padding: 15px 20px
 
+		&_list
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			li
+				width: 48%
+				@extend h2
+
+			a
+				display: block
+				color: $color--text
+
+			.active
+				text-decoration: underline
+
 		&_line
 			width: 100%
 			margin-bottom: 15px
 
 			input
+				color: $color--text
+
 				&:hover,
 				&:focus
 					border-color: #97cce5
-					color: $color--white
+					color: $color--text
 
 		&_checkbox
 			margin-top: 35px
@@ -1491,10 +1672,51 @@
 			+r(480)
 				margin: 20px 0
 
+			label
+				position: relative
+				padding-left: 50px
+				cursor: pointer
+				margin-bottom: 0
+				margin-right: 0
+				font-size: 12px
+
+				&::before,
+				&::after
+					content: ''
+					position: absolute
+					left: 5px
+					top: 50%
+					transform: translate(0, -50%)
+
+				&::before
+					width: 22px
+					height: 22px
+					border-radius: 50%
+					border: 5px solid #97cce5
+					background-color: #ffffff
+
+				&::after
+					width: 12px
+					height: 12px
+					border-radius: 50%
+					border: 1px solid $color--accent
+					background: $color--accent
+					left: 10px
+					transition: all .6s
+
+			input[type="checkbox"]
+				display: none
+
+			input[type="checkbox"]:checked + label::after
+				transform: translate(0, -50%) scale(1)
+
+			input[type="checkbox"] + label::after
+				transform: translate(0, -50%) scale(0)
+
 		&_remember
 			display: flex
-			justify-content: space-between
-			margin-top: 35px
+			justify-content: center
+			margin-top: 15px
 
 			a
 				color: $color--text
@@ -1507,47 +1729,6 @@
 
 		br
 				display: none
-
-		label
-			position: relative
-			padding-left: 50px
-			cursor: pointer
-			margin-bottom: 0
-			margin-right: 0
-			font-size: 12px
-
-			&::before,
-			&::after
-				content: ''
-				position: absolute
-				left: 5px
-				top: 50%
-				transform: translate(0, -50%)
-
-			&::before
-				width: 22px
-				height: 22px
-				border-radius: 50%
-				border: 5px solid #97cce5
-				background-color: #ffffff
-
-			&::after
-				width: 12px
-				height: 12px
-				border-radius: 50%
-				border: 1px solid $color--accent
-				background: $color--accent
-				left: 10px
-				transition: all .6s
-
-		input[type="checkbox"]
-			display: none
-
-		input[type="checkbox"]:checked + label::after
-			transform: translate(0, -50%) scale(1)
-
-		input[type="checkbox"] + label::after
-			transform: translate(0, -50%) scale(0)
 
 	h2
 		text-align: center
@@ -1684,7 +1865,7 @@
 
 	&__navigation
 		position: absolute
-		top: 20%
+		top: 15%
 		right: 25px
 		z-index: 100
 		display: flex
@@ -1815,7 +1996,7 @@
 	&__wrap
 		position: relative
 		overflow: hidden
-		height: 100vh
+		height: 1200px
 
 		+r(1410)
 			overflow: auto
@@ -3112,6 +3293,993 @@
 
 .dragscroll
 	cursor: grab
+
+
+.error-404
+	padding-top: 35px
+	padding-bottom: 55px
+
+	&__wrap
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+
+		h2
+			width: 100%
+			text-align: center
+			margin-bottom: 30px
+
+		a
+			max-width: 320px
+
+
+.adout
+	padding-top: 35px
+	padding-bottom: 55px
+
+	h2
+		margin-bottom: 15px
+
+	h3
+		font-size: 24px
+		margin-bottom: 15px
+
+		+r(992)
+			font-size: 20px
+
+	p
+		margin-bottom: 10px
+
+	ul
+		margin-bottom: 15px
+		list-style-type: disc
+		padding-left: 15px
+
+	ol
+		padding-left: 15px
+
+	li
+		margin-bottom: 5px
+
+		&:last-child
+			margin-bottom: 0
+
+
+.screen-reader-text
+	display: none
+
+.wbu-quantity
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 100%
+
+
+.widget_shopping_cart
+	position: absolute
+	right: 0
+	background-color: #ffffff
+	border-radius: 10px
+	box-shadow: 0 0 10px 0 rgba(#000, .3)
+	overflow: hidden
+
+.woocommerce-mini-cart
+	overflow: auto
+	display: block
+	max-height: 320px
+	height: 100%
+	width: 320px
+	box-shadow: 0 0 10px 0 rgba(#000, .3)
+	padding: 5px 0
+	border-radius: 10px
+
+	li
+		position: relative
+		display: flex
+		align-items: center
+		padding: 5px 25px 5px 10px
+		+transition
+
+		&:hover,
+		&:focus
+			background-color:: rgba(#000, .07s)
+
+	p
+		width: 100%
+		display: flex
+		justify-content: space-between
+
+	a
+		color: $color--text
+
+	.thumbnail
+		width: 45px
+		height: 45px
+		display: block
+		margin-right: 15px
+		flex-shrink: 0
+		border-radius: 5px
+
+		img
+			width: 100%
+			height: 100%
+
+	.quantity
+		color: $color--text
+		font-weight: 600
+	
+	&__total
+		color: $color--text
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 5px 25px 5px 10px
+
+		strong
+			font-weight: 400
+
+		span
+			font-weight: 700
+
+	&__buttons
+		display: flex
+		justify-content: space-between
+		padding: 0 10px 10px
+
+		a
+			@extend .btn
+			font-size: 12px
+			padding: 0
+			max-width: 48%
+			line-height: 1
+
+.remove_from_cart_button
+	position: absolute
+	right: 5px
+	top: 50%
+	transform: translate(0, -50%)
+	display: block
+	width: 12px
+	height: 12px
+
+	&:hover
+		&::before,
+		&::after
+			background-color: $color--red
+
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		background-color: #000
+		transform: translate(-50%, -50%) rotate(45deg)
+		border-radius: 3px
+
+	&::before
+		width: 10px
+		height: 2px
+
+	&::after
+		height: 10px
+		width: 2px
+
+.woocommerce-mini-cart__empty-message
+	padding: 10px
+	white-space: nowrap
+	color: $color--text
+
+.center
+	text-align: center
+
+
+.checkout
+	padding-top: 35px
+	padding-bottom: 55px
+
+	&__coupon
+		margin-bottom: 20px
+
+		&_line
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			input
+				width: 75%
+				border-color: #97cce5
+
+			button
+				width: 24%
+				min-width: 170px
+
+				+r(480)
+					min-width: 150px
+					padding: 0
+
+		.woocommerce-info
+			font-size: 20px
+
+			+r(992)
+				font-size: 16px
+
+			+r(480)
+				font-size: 14px
+
+		a
+			color: $color--accent
+
+	&__table
+		overflow: auto
+		max-height: 400px
+
+	h2
+		@extend h2
+		margin-bottom: 20px
+
+	label
+		font-size: 12px
+		color: #b4b6ba
+		width: 20%
+
+		+r(480)
+			width: 25%
+
+	input
+		color: $color--text
+
+		+r(480)
+			padding: 0 10px
+
+		&:hover,
+		&:focus
+			border-color: #97cce5
+			color: $color--text
+
+	.screen-reader-text
+		display: block
+		font-size: 1px !important
+		opacity: 0
+
+	.woocommerce-input-wrapper
+		width: 78%
+
+		+r(480)
+			width: 70%
+
+	&__btn
+		justify-content: flex-end !important
+		padding-top: 15px
+		margin-bottom: 0
+
+	&__wrap
+		background-color: #eaedf2
+		border-radius: 25px
+		padding: 35px 40px
+
+		+r(767)
+			padding: 20px
+
+		+r(480)
+			padding: 15px
+			border-radius: 15px
+
+	&__form
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+		+r(992)
+			justify-content: center
+
+	&__col
+		width: 49%
+
+		+r(992)
+			width: 100%
+			margin-bottom: 20px
+			max-width: 480px
+
+		&:last-child
+			+r(992)
+				margin-bottom: 0
+
+	.form-row
+		margin-bottom: 15px
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	.order-total
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		padding: 10px 6px
+		font-size: 26px
+
+	.checkout__final_header
+		font-size: 22px
+
+		&::after
+			content: ': '
+			margin-right: 6px
+
+
+.woocommerce
+	&__cart-item
+		display: flex
+		margin-bottom: 15px
+
+		.amount
+			font-size: 22px
+			font-weight: 700
+
+		.product-name
+			@extend .archive__item_title
+			width: 100%
+			display: flex
+			align-items: center
+			background-color: #eaedf2
+			border-top-left-radius: 15px
+			border-bottom-left-radius: 15px
+			padding: 10px
+			margin-bottom: 0
+
+			&:hover,
+			&:focus
+				color: $color--text
+
+			strong
+				margin-left: 5px
+
+		.product-total
+			background-color: #eaedf2
+			border-top-right-radius: 15px
+			border-bottom-right-radius: 15px
+			display: flex
+			align-items: center
+			padding: 10px
+
+		.product-quantity
+			color: $color--red
+
+	&__product-thumbnail
+		width: 80px
+		height: 80px
+		margin-right: 20px
+		flex-shrink: 0
+		overflow: hidden
+		border-radius: 20px
+		box-shadow: 0 0 5px 0 rgba(#fff, 1)
+
+		img
+			width: 100%
+			height: 100%
+
+	.shop_table .cart-subtotal
+		display: none
+
+	&-product-gallery__trigger
+		display: none
+
+
+.order
+	@extend .contacts__wrap
+	text-align: center
+	flex-direction: column
+
+	.order_details
+		margin-bottom: 25px
+
+	.woocommerce-notice
+		@extend h2
+
+	.woocommerce-table
+		margin: 0 auto 25px
+		text-align: left
+
+		td, th
+			padding: 2px 10px
+
+		a
+			color: $color--accent
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+		
+	address
+		margin-bottom: 0
+
+
+
+.winter
+	height: 1410px
+
+	&__audio
+
+		&--left
+			audio
+				left: 100%
+				top: 50%
+				transform: translate(0, -50%)
+
+		&--right
+			audio
+				right: 100%
+				top: 50%
+				transform: translate(0, -50%)
+
+		// sun...moon
+		&--1
+			top: 2.4%
+			left: 7.3%
+
+			span
+				width: 140px
+				height: 90px
+
+		&--2
+			top: 2.4%
+			left: 23.3%
+
+			span
+				width: 75px
+				height: 24px
+
+		&--3
+			top: 2.4%
+			left: 39.1%
+
+			span
+				width: 85px
+				height: 24px
+
+		&--4
+			top: 2.4%
+			left: 55.3%
+
+			span
+				width: 75px
+				height: 24px
+
+		&--5
+			top: 2.4%
+			left: 72.3%
+
+			span
+				width: 45px
+				height: 24px
+
+		&--6
+			top: 2.4%
+			left: 82.3%
+
+			span
+				width: 160px
+				height: 90px
+		// a...z
+		&--7
+			top: 11.2%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--8
+			top: 13.2%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--9
+			top: 15.5%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--10
+			top: 17.6%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--11
+			top: 19.7%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--12
+			top: 21.9%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--13
+			top: 24.1%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--14
+			top: 26.1%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--15
+			top: 28.1%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--16
+			top: 30.4%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--17
+			top: 32.6%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--18
+			top: 34.6%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--19
+			top: 36.7%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--20
+			top: 38.8%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--21
+			top: 41%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--22
+			top: 43.1%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--23
+			top: 45.3%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--24
+			top: 47.3%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--25
+			top: 49.6%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--26
+			top: 51.7%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--27
+			top: 53.9%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--28
+			top: 56.1%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--29
+			top: 58.2%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--30
+			top: 60.2%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--31
+			top: 62.4%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--32
+			top: 64.6%
+			left: 3.7%
+
+			span
+				width: 140px
+				height: 23px
+
+		&--33
+			top: 10.2%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--34
+			top: 11.55%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--35
+			top: 12.9%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--36
+			top: 14.25%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--37
+			top: 15.5%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--38
+			top: 16.8%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--39
+			top: 18%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--39
+			top: 18%
+			left: 85%
+
+			span
+				width: 85px
+				height: 18px
+
+		&--40
+			top: 19.3%
+			left: 85%
+
+			span
+				width: 89px
+				height: 18px
+
+		&--41
+			top: 20.6%
+			left: 85%
+
+			span
+				width: 89px
+				height: 18px
+
+		&--42
+			top: 21.95%
+			left: 85%
+
+			span
+				width: 89px
+				height: 18px
+
+		&--43
+			top: 23.2%
+			left: 85%
+
+			span
+				width: 89px
+				height: 18px
+
+		&--44
+			top: 24.45%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--45
+			top: 25.75%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--46
+			top: 27%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--47
+			top: 28.3%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--48
+			top: 29.6%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--49
+			top: 30.85%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--50
+			top: 32.1%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--51
+			top: 33.45%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--52
+			top: 34.75%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--53
+			top: 36%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--54
+			top: 37.3%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--55
+			top: 38.55%
+			left: 85%
+
+			span
+				width: 125px
+				height: 18px
+
+		&--56
+			top: 39.85%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--57
+			top: 41.1%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--58
+			top: 42.5%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--59
+			top: 43.85%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--60
+			top: 45.1%
+			left: 85%
+
+			span
+				width: 145px
+				height: 18px
+
+		&--61
+			top: 46.35%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--62
+			top: 47.7%
+			left: 85%
+
+			span
+				width: 135px
+				height: 18px
+
+		&--63
+			top: 49%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--64
+			top: 50.25%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--65
+			top: 51.55%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--66
+			top: 52.85%
+			left: 85%
+
+			span
+				width: 95px
+				height: 18px
+
+		&--67
+			top: 54.1%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--68
+			top: 55.4%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--69
+			top: 56.65%
+			left: 85%
+
+			span
+				width: 105px
+				height: 18px
+
+		&--70
+			top: 57.95%
+			left: 85%
+
+			span
+				width: 145px
+				height: 18px
+
 
 
 @import "page"
