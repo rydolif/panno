@@ -2092,7 +2092,7 @@
 			display: block
 			width: 3px
 			height: 3px
-			background-color: rgba(#000, .4)
+			// background-color: rgba(#000, .4)
 			white-space: nowrap
 
 		&:hover,
@@ -3701,15 +3701,21 @@
 
 		&--left
 			audio
-				left: 100%
-				top: 50%
-				transform: translate(0, -50%)
+				left: 70%
+				top: 100%
+				transform: translate(-50%, 0)
 
 		&--right
 			audio
 				right: 100%
-				top: 50%
-				transform: translate(0, -50%)
+				top: 100%
+				transform: translate(50%, 0)
+
+		&--bottom
+			audio
+				right: 100%
+				top: -100%
+				transform: translate(50%, -70%)
 
 		// sun...moon
 		&--1
